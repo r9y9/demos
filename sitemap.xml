@@ -3,29 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://r9y9.github.io/demos/projects/interspeech2019/</loc>
+    <loc>https://r9y9.github.io/demos/projects/interspeech2019/</loc>
     <lastmod>2019-06-25T17:20:29+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://r9y9.github.io/demos/categories/</loc>
+    <loc>https://r9y9.github.io/demos/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://r9y9.github.io/demos/</loc>
-    <lastmod>2019-06-25T17:20:29+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://r9y9.github.io/demos/projects/</loc>
+    <loc>https://r9y9.github.io/demos/tags/interspeech/</loc>
     <lastmod>2019-06-25T17:20:29+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://r9y9.github.io/demos/tags/</loc>
+    <loc>https://r9y9.github.io/demos/</loc>
+    <lastmod>2019-06-25T17:20:29+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://r9y9.github.io/demos/projects/</loc>
+    <lastmod>2019-06-25T17:20:29+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://r9y9.github.io/demos/tags/</loc>
+    <lastmod>2019-06-25T17:20:29+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://r9y9.github.io/demos/categories/tts/</loc>
+    <lastmod>2019-06-25T17:20:29+09:00</lastmod>
     <priority>0</priority>
   </url>
   

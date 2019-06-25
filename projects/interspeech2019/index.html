@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-<link rel="stylesheet" href="http://r9y9.github.io/demos/css/normalize.css">
-<link rel="stylesheet" href="http://r9y9.github.io/demos/css/skeleton.css">
-<link rel="stylesheet" href="http://r9y9.github.io/demos/css/custom.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/normalize.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/skeleton.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/custom.css">
 <link rel="alternate" href="index.xml" type="application/rss+xml" title="List of demos">
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-<title>Probability density distillation with generative adversarial networks for high-quality parallel waveform generation - List of demos</title>
+<title>INTERSPEECH 2019: Probability density distillation with generative adversarial networks for high-quality parallel waveform generation - List of demos</title>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 
 	<main role="main">
 		<article itemscope itemtype="http://schema.org/BlogPosting">
-			<h1 class="entry-title" itemprop="headline">Probability density distillation with generative adversarial networks for high-quality parallel waveform generation</h1>
+			<h1 class="entry-title" itemprop="headline">INTERSPEECH 2019: Probability density distillation with generative adversarial networks for high-quality parallel waveform generation</h1>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2019-06-25">June 25, 2019</time></span>
 			<section itemprop="entry-text">
 				
@@ -43,7 +43,7 @@
 
 <p>This paper proposes an effective probability density distillation (PDD) algorithm for WaveNet-based parallel waveform generation (PWG) systems. Recently proposed teacher-student frameworks in the PWG system have successfully achieved a real-time generation of speech signals. However, the difficulties optimizing the PDD criteria without auxiliary losses result in quality degradation of synthesized speech. To generate more natural speech signals within the teacher-student framework, we propose a novel optimization criterion based on generative adversarial networks (GANs). In the proposed method, the inverse autoregressive flow-based student model is incorporated as a generator in the GAN framework, and jointly optimized by the PDD mechanism with the proposed adversarial learning method. As this process encourages the student to model the distribution of realistic speech waveform, the perceptual quality of the synthesized speech becomes much more natural. Our experimental results verify that the PWG systems with the proposed method outperform both those using conventional approaches, and also autoregressive generation systems with a well-trained teacher WaveNet.</p>
 
-<div align="center"><img src="http://r9y9.github.io/demos/images/interspeech2019_fig.png" width="90%" /></div>
+<div align="center"><img src="https://r9y9.github.io/demos/images/interspeech2019_fig.png" width="90%" /></div>
 
 <h2 id="audio-samples">Audio samples</h2>
 
@@ -67,78 +67,78 @@
 <p><p>Sample 1</p>
 <table><thead>
 <tr><th>Ground truth</th><th>Teacher</th><th>Student-AX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-1-Ground truth.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-2-Teacher.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-2-Teacher.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-AXAV</th><th>Student-KL</th><th>Student-KLAX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-KLAXAD</th><th>Student-KLAXAD*</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample01]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><p>Sample 2</p>
 <table><thead>
 <tr><th>Ground truth</th><th>Teacher</th><th>Student-AX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-1-Ground truth.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-2-Teacher.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-2-Teacher.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-AXAV</th><th>Student-KL</th><th>Student-KLAX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-KLAXAD</th><th>Student-KLAXAD*</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample02]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><p>Sample 3</p>
 <table><thead>
 <tr><th>Ground truth</th><th>Teacher</th><th>Student-AX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-1-Ground truth.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-2-Teacher.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-2-Teacher.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-AXAV</th><th>Student-KL</th><th>Student-KLAX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-KLAXAD</th><th>Student-KLAXAD*</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample03]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><p>Sample 4</p>
 <table><thead>
 <tr><th>Ground truth</th><th>Teacher</th><th>Student-AX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-1-Ground truth.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-2-Teacher.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-2-Teacher.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-AXAV</th><th>Student-KL</th><th>Student-KLAX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-KLAXAD</th><th>Student-KLAXAD*</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample04]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><p>Sample 5</p>
 <table><thead>
 <tr><th>Ground truth</th><th>Teacher</th><th>Student-AX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-1-Ground truth.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-2-Teacher.wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-2-Teacher.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-3-Student-AX (AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-AXAV</th><th>Student-KL</th><th>Student-KLAX</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-4-Student-AXAV (AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-5-Student-KL (KLD only; ablation study).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-6-Student-KLAX (KLD + AuxLoss).wav" type="audio/wav"></audio></td>
 </tr></tbody></table><table><thead>
 <tr><th>Student-KLAXAD</th><th>Student-KLAXAD*</th></tr>
-</thead><tbody><tr><td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
-<td><audio controls=""><source src="http://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-7-Student-KLAXAD (Proposed; KLD + AuxLoss + AdvLoss).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/interspeech2019/[Sample05]-8-Student-KLAXAD (Proposed; weights optimized version).wav" type="audio/wav"></audio></td>
 </tr></tbody></table></p>
 
 <h2 id="references">References</h2>
@@ -154,7 +154,7 @@
 				
 <div class="social">
     <div>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="r9y9" data-text="Probability density distillation with generative adversarial networks for high-quality parallel waveform generation" data-related="r9y9">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="r9y9" data-text="INTERSPEECH 2019: Probability density distillation with generative adversarial networks for high-quality parallel waveform generation" data-related="r9y9">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
 </div>
@@ -170,7 +170,7 @@
 		<address>
 
 		<div class="copyright">Copyright &copy;
-			<a href="http://r9y9.github.io/demos/about">Ryuichi YAMAMOTO</a> All rights reserved.
+			<a href="https://r9y9.github.io/demos/about">Ryuichi YAMAMOTO</a> All rights reserved.
 
       <a href="https://github.com/r9y9">
 				<span class="github">https://github.com/r9y9</span>.
