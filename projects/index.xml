@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>INTERSPEECH 2019: Probability Density Distillation with Generative Adversarial Networks for High-Quality Parallel Waveform Generation</title>
+      <title>Probability Density Distillation with Generative Adversarial Networks for High-Quality Parallel Waveform Generation</title>
       <link>https://r9y9.github.io/demos/projects/interspeech2019/</link>
       <pubDate>Tue, 25 Jun 2019 17:20:29 +0900</pubDate>
       
       <guid>https://r9y9.github.io/demos/projects/interspeech2019/</guid>
-      <description>Preprint: arXiv:1904.04472 (to be published in INTERSPEECH 2019)
+      <description>Preprint: arXiv:1904.04472, Published version: ISCA Archive Interspeech 2019
 Authors  Ryuichi Yamamoto (LINE Corp.) Eunwoo Song (NAVER Corp.) Jae-Min Kim (NAVER Corp.)  Abstract This paper proposes an effective probability density distillation (PDD) algorithm for WaveNet-based parallel waveform generation (PWG) systems. Recently proposed teacher-student frameworks in the PWG system have successfully achieved a real-time generation of speech signals. However, the difficulties optimizing the PDD criteria without auxiliary losses result in quality degradation of synthesized speech.</description>
     </item>
     
