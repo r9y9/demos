@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.57.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/normalize.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/skeleton.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/custom.css">
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="List of demos">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+<title>Parallel WaveGAN: A Fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram - List of demos</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Parallel WaveGAN: A Fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2019-10-21">October 21, 2019</time></span>
+			<section itemprop="entry-text">
+				
+
+<p>Preprint: <a href="https://arxiv.org/abs/1904.04472">TBD</a> (submitted to <a href="https://2020.ieeeicassp.org/">ICASSP 2020</a>)</p>
+
+<p>TBA: We will publish English samples using the <a href="https://keithito.com/LJ-Speech-Dataset/">LJSpeech dataset</a> soon.</p>
+
+<h2 id="authors">Authors</h2>
+
+<ul>
+<li>Ryuichi Yamamoto (LINE Corp.)</li>
+<li>Eunwoo Song (NAVER Corp.)</li>
+<li>Jae-Min Kim (NAVER Corp.)</li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>We propose Parallel WaveGAN<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, a distillation-free, fast, and small-footprint waveform generation method using a generative adversarial network. In the proposed method, a non-autoregressive WaveNet is trained by jointly optimizing multi-resolution spectrogram and adversarial loss functions, which can effectively capture the time-frequency distribution of the realistic speech waveform. As our method does not require density distillation used in the conventional teacher-student framework, the entire model can be easily trained even with a small number of parameters. In particular, the proposed Parallel WaveGAN has only 1.44 M parameters and can generate 24 kHz speech waveform 28.68 times faster than real-time on a single GPU environment. Perceptual listening test results verify that our proposed method achieves 4.16 mean opinion score within a Transformer-based text-to-speech framework, which is comparative to the best distillation-based Parallel WaveNet system.</p>
+
+<div align="center"><img src="https://r9y9.github.io/demos/images/icassp2020_fig.png" width="60%" /></div>
+
+<h2 id="audio-samples-japanese">Audio samples (Japanese)</h2>
+
+<ol>
+<li>Analysis/synthesis</li>
+<li>Text-to-speech (Transformer TTS + vocoder models)</li>
+</ol>
+
+<p>$L^{(1)}$ indicates that the system used a single STFT auxiliary loss, while $L^{(1,2,3)}$ used our proposed multi-resolution STFT auxiliary loss.</p>
+
+<p>The following samples are used in our subjective evaluations.</p>
+
+<h3 id="analysis-synthesis">Analysis/synthesis</h3>
+
+<p><p>Sample 1</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-3-ClariNet (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 2</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-3-ClariNet (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 3</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-3-ClariNet (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 4</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-3-ClariNet (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 5</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-3-ClariNet (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="text-to-speech">Text-to-speech</h3>
+
+<p><p>Sample 1</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer + WaveNet</th><th>Transformer + ClariNet-$L^{(1,2,3)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample01]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample01]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample01]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Transformer + ClariNet-GAN-$L^{(1,2,3)}$</th><th>Transformer + Parallel WaveGAN&ndash;$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample01]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample01]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 2</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer + WaveNet</th><th>Transformer + ClariNet-$L^{(1,2,3)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample02]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample02]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample02]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Transformer + ClariNet-GAN-$L^{(1,2,3)}$</th><th>Transformer + Parallel WaveGAN&ndash;$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample02]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample02]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 3</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer + WaveNet</th><th>Transformer + ClariNet-$L^{(1,2,3)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample03]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample03]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample03]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Transformer + ClariNet-GAN-$L^{(1,2,3)}$</th><th>Transformer + Parallel WaveGAN&ndash;$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample03]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample03]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 4</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer + WaveNet</th><th>Transformer + ClariNet-$L^{(1,2,3)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample04]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample04]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample04]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Transformer + ClariNet-GAN-$L^{(1,2,3)}$</th><th>Transformer + Parallel WaveGAN&ndash;$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample04]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample04]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 5</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer + WaveNet</th><th>Transformer + ClariNet-$L^{(1,2,3)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/AnaSyn/[Sample05]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample05]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample05]-4-ClariNet (3spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Transformer + ClariNet-GAN-$L^{(1,2,3)}$</th><th>Transformer + Parallel WaveGAN&ndash;$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample05]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample05]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>Work performed with nVoice, Clova Voice, Naver Corp.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Note that our work is not closely related to an unsupervised waveform synthesis model, <a href="https://arxiv.org/abs/1802.04208">WaveGAN</a>.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+				
+<div class="social">
+    <div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="r9y9" data-text="Parallel WaveGAN: A Fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram" data-related="r9y9">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+</div>
+
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<address>
+
+		<div class="copyright">Copyright &copy;
+			<a href="https://r9y9.github.io/demos/about">Ryuichi YAMAMOTO</a> All rights reserved.
+
+      <a href="https://github.com/r9y9">
+				<span class="github">https://github.com/r9y9</span>.
+			</a>
+		</div>
+		</address>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-44433856-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
+ </script>
+
+
+
+
+</body>
+</html>
+
