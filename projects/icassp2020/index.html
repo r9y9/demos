@@ -54,9 +54,19 @@
 <li>Text-to-speech (Transformer TTS + vocoder models)</li>
 </ol>
 
-<p>$L^{(1)}$ indicates that the system used a single STFT auxiliary loss, while $L^{(1,2,3)}$ used our proposed multi-resolution STFT auxiliary loss.</p>
-
 <p>The following samples are used in our subjective evaluations.</p>
+
+<h3 id="systems-used-for-comparision">Systems used for comparision</h3>
+
+<ul>
+<li><strong>Ground truth</strong>: Recorded speech.</li>
+<li><strong>WaveNet</strong>: Gaussian WaveNet <a href="https://arxiv.org/abs/1807.07281">[1]</a></li>
+<li><strong>ClariNet-$L^{(1)}$</strong>: ClariNet <a href="https://arxiv.org/abs/1807.07281">[1]</a> with the single STFT auxiliary loss</li>
+<li><strong>ClariNet-$L^{(1,2,3)}$</strong>: ClariNet with the multi-resolution STFT loss</li>
+<li><strong>ClariNet-GAN-$L^{(1,2,3)}$</strong>: ClariNet with the multi-resolution STFT and adversarial losses <a href="https://arxiv.org/abs/1807.07281">[2]</a></li>
+<li><strong>Parallel WaveGAN-$L^{(1)}$</strong>: Parallel WaveGAN with th single STFT loss</li>
+<li><strong>Parallel WaveGAN-$L^{(1,2,3)}$</strong>: Parallel WaveGAN with the multi-resolution STFT loss</li>
+</ul>
 
 <h3 id="analysis-synthesis">Analysis/synthesis</h3>
 
@@ -185,6 +195,14 @@
 </thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample05]-5-ClariNet-GAN (3spec).wav" type="audio/wav"></audio></td>
 <td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample05]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
 </tr></tbody></table></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="1" title="Note that our work is not closely related to an unsupervised waveform synthesis model, [WaveGAN](https://arxiv.org/abs/1802.04208).
+">1</a>: W. Ping, K. Peng, and J. Chen, “ClariNet: Parallel wave generation in end-to-end text-to-speech,” in Proc. ICLR, 2019 (<a href="https://arxiv.org/abs/1807.07281">arXiv</a>).</li>
+<li>[2]: R. Yamamoto, E. Song, and J.-M. Kim, “Probability density distillation with generative adversarial networks for high-quality parallel waveform generation,” in Proc. INTERSPEECH, 2019, pp. 699–703. (<a href="https://www.isca-speech.org/archive/Interspeech_2019/abstracts/1965.html">ISCA archive</a>)</li>
+</ul>
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
