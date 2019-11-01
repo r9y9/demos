@@ -33,6 +33,13 @@
 
 <p>TBA: We will publish English samples using the <a href="https://keithito.com/LJ-Speech-Dataset/">LJSpeech dataset</a> soon.</p>
 
+<ul>
+<li><a href="#audio-samples-japanese">Audio samples (Japanese)</a></li>
+<li><a href="#audio-samples-english">Audio samples (English)</a></li>
+</ul>
+
+<p><em>Japanese samples were used in the subjective evaluations reported in our paper.</em></p>
+
 <h2 id="authors">Authors</h2>
 
 <ul>
@@ -47,15 +54,6 @@
 
 <div align="center"><img src="https://r9y9.github.io/demos/images/icassp2020_fig.png" width="60%" /></div>
 
-<h2 id="audio-samples-japanese">Audio samples (Japanese)</h2>
-
-<ol>
-<li>Analysis/synthesis</li>
-<li>Text-to-speech (Transformer TTS + vocoder models)</li>
-</ol>
-
-<p>The following samples are used in our subjective evaluations.</p>
-
 <h3 id="systems-used-for-comparision">Systems used for comparision</h3>
 
 <ul>
@@ -67,6 +65,13 @@
 <li><strong>Parallel WaveGAN-$L^{(1)}$</strong>: Parallel WaveGAN with th single STFT loss</li>
 <li><strong>Parallel WaveGAN-$L^{(1,2,3)}$</strong>: Parallel WaveGAN with the multi-resolution STFT loss</li>
 </ul>
+
+<h2 id="audio-samples-japanese">Audio samples (Japanese)</h2>
+
+<ol>
+<li>Analysis/synthesis</li>
+<li>Text-to-speech (Transformer TTS + vocoder models)</li>
+</ol>
 
 <h3 id="analysis-synthesis">Analysis/synthesis</h3>
 
@@ -196,12 +201,141 @@
 <td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/TTS/[Sample05]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
 </tr></tbody></table></p>
 
+<h2 id="audio-samples-english">Audio samples (English)</h2>
+
+<ol>
+<li>Analysis/synthesis</li>
+<li>Text-to-speech (<a href="https://arxiv.org/abs/1910.10909">ESPnet-TTS</a> + Our Parallel WaveGAN)</li>
+</ol>
+
+<p><a href="https://keithito.com/LJ-Speech-Dataset/">LJSpeech dataset</a> is used for the test. Mel-spectrograms (with the range of 70 - 7600 Hz<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>) were used for local conditioning.</p>
+
+<p><em>Please note that the English samples were not used in the subjective evaluations reported in our paper.</em></p>
+
+<h3 id="analysis-synthesis-1">Analysis/synthesis</h3>
+
+<p><p>That is reflected in definite and comprehensive operating procedures.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample01]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample01]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample01]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample01]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>The commission also recommends.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample02]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample02]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample02]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample02]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>That the secret service consciously set about the task of inculcating and maintaining the highest standard of excellence and esprit, for all of its personnel.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample03]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample03]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample03]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample03]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>This involves tight and unswerving discipline as well as the promotion of an outstanding degree of dedication and loyalty to duty.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample04]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample04]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample04]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample04]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>The commission emphasizes that it finds no causal connection between the assassination.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>WaveNet</th><th>ClariNet-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample05]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample05]-2-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>ClariNet-$L^{(1,2,3)}$</th><th>ClariNet-GAN-$L^{(1,2,3)}$</th><th>Parallel WaveGAN-$L^{(1)}$</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="audio/dummy.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample05]-6-Parallel WaveGAN (1spec).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>Parallel WaveGAN-$L^{(1,2,3)}$ <font color="#0000cd">(ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample05]-7-Parallel WaveGAN (3spec) (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="text-to-speech-1">Text-to-speech</h3>
+
+<p>We combined our Parallel WaveGAN with <a href="https://arxiv.org/abs/1910.10909">ESPnet-TTS</a>. The systems used here are as follows:</p>
+
+<ul>
+<li><strong>Transformer.v3</strong>: Transformer.v3 presented in <a href="https://arxiv.org/abs/1910.10909">ESPnet-TTS</a>.</li>
+<li><strong>MoL WaveNet</strong>: WaveNet with mixture of logistics output distribution (shipped with ESPnet). Pre-emphasis/de-emphasis were applied to reduce perceptual noise (similar to <a href="https://arxiv.org/abs/1810.11846">LPCNet</a>).</li>
+<li><strong>Parallel WaveGAN</strong>: Our Parallel WaveGAN with multi-resolution spectrogram loss.</li>
+</ul>
+
+<p>Note that <strong>Transformer.v3 + MoL WaveNet</strong> is the same as used in <a href="https://espnet.github.io/icassp2020-tts/">https://espnet.github.io/icassp2020-tts/</a>.
+Mel-spectrograms (with the range of 70 - 11025 Hz) were used for local conditioning.</p>
+
+<p><p>That is reflected in definite and comprehensive operating procedures.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer.v3 + MoL WaveNet</th><th>Transformer.v3 + Parallel WaveGAN</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample01]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample01]-1-MoL-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample01]-2-Parallel WaveGAN.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>The commission also recommends.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer.v3 + MoL WaveNet</th><th>Transformer.v3 + Parallel WaveGAN</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample02]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample02]-1-MoL-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample02]-2-Parallel WaveGAN.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>That the secret service consciously set about the task of inculcating and maintaining the highest standard of excellence and esprit, for all of its personnel.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer.v3 + MoL WaveNet</th><th>Transformer.v3 + Parallel WaveGAN</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample03]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample03]-1-MoL-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample03]-2-Parallel WaveGAN.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>This involves tight and unswerving discipline as well as the promotion of an outstanding degree of dedication and loyalty to duty.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer.v3 + MoL WaveNet</th><th>Transformer.v3 + Parallel WaveGAN</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample04]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample04]-1-MoL-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample04]-2-Parallel WaveGAN.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>The commission emphasizes that it finds no causal connection between the assassination.</p>
+<table><thead>
+<tr><th>Ground truth</th><th>Transformer.v3 + MoL WaveNet</th><th>Transformer.v3 + Parallel WaveGAN</th></tr>
+</thead><tbody><tr><td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/AnaSyn/[LJ-Sample05]-1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample05]-1-MoL-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls=""><source src="https://r9y9.github.io/demos/audio/icassp2020/LJSpeech/TTS/[LJ-Sample05]-2-Parallel WaveGAN.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
 <h2 id="references">References</h2>
 
 <ul>
-<li><a href="1" title="Note that our work is not closely related to an unsupervised waveform synthesis model, [WaveGAN](https://arxiv.org/abs/1802.04208).
-">1</a>: W. Ping, K. Peng, and J. Chen, “ClariNet: Parallel wave generation in end-to-end text-to-speech,” in Proc. ICLR, 2019 (<a href="https://arxiv.org/abs/1807.07281">arXiv</a>).</li>
-<li>[2]: R. Yamamoto, E. Song, and J.-M. Kim, “Probability density distillation with generative adversarial networks for high-quality parallel waveform generation,” in Proc. INTERSPEECH, 2019, pp. 699–703. (<a href="https://www.isca-speech.org/archive/Interspeech_2019/abstracts/1965.html">ISCA archive</a>)</li>
+<li>W. Ping, K. Peng, and J. Chen, “ClariNet: Parallel wave generation in end-to-end text-to-speech,” in Proc. ICLR, 2019 (<a href="https://arxiv.org/abs/1807.07281">arXiv</a>).</li>
+<li>R. Yamamoto, E. Song, and J.-M. Kim, “Probability density distillation with generative adversarial networks for high-quality parallel waveform generation,” in Proc. INTERSPEECH, 2019, pp. 699–703. (<a href="https://www.isca-speech.org/archive/Interspeech_2019/abstracts/1965.html">ISCA archive</a>)</li>
 </ul>
 
 <h2 id="acknowledgements">Acknowledgements</h2>
@@ -226,6 +360,8 @@
 <ol>
 <li id="fn:1">Note that our work is not closely related to an unsupervised waveform synthesis model, <a href="https://arxiv.org/abs/1802.04208">WaveGAN</a>.
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Audio quaility can be improved by using the full-band frequency range, but it may suffer from the over-smoothing problem in TTS.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
 </ol>
 </div>
 
