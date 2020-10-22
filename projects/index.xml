@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on List of demos</title>
@@ -6,10 +6,16 @@
     <description>Recent content in Projects on List of demos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Oct 2019 20:18:27 +0900</lastBuildDate>
-    
-	<atom:link href="https://r9y9.github.io/demos/projects/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 21 Oct 2020 23:38:48 +0900</lastBuildDate><atom:link href="https://r9y9.github.io/demos/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parallel waveform synthesis based on generative adversarial networks with voicing-aware conditional discriminators</title>
+      <link>https://r9y9.github.io/demos/projects/icassp2021/</link>
+      <pubDate>Wed, 21 Oct 2020 23:38:48 +0900</pubDate>
+      
+      <guid>https://r9y9.github.io/demos/projects/icassp2021/</guid>
+      <description>Submitted to ICASSP 2021
+Table of contents  Analysis/synthesis samples (Japanese) Text-to-speech samples (Japanese)  Authors  Ryuichi Yamamoto (LINE Corp.) Eunwoo Song (NAVER Corp.) Min-Jae Hwang (Search Solutions Inc.) Jae-Min Kim (NAVER Corp.)  Abstract This paper proposes voicing-aware conditional discriminators for Parallel WaveGAN-based waveform synthesis systems. In this framework, we adopt a projection-based conditioning method that can significantly improve the discriminator’s performance. Furthermore, the conventional discriminator is separated into two waveform discriminators for modeling voiced and unvoiced speech.</description>
+    </item>
     
     <item>
       <title>Parallel WaveGAN: A fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram</title>
@@ -17,7 +23,7 @@
       <pubDate>Mon, 21 Oct 2019 20:18:27 +0900</pubDate>
       
       <guid>https://r9y9.github.io/demos/projects/icassp2020/</guid>
-      <description>Preprint: arXiv:1910.11480 (submitted to ICASSP 2020)
+      <description>Preprint: arXiv:1910.11480 (accepted to ICASSP 2020)
  Audio samples (Japanese) Audio samples (English)  Japanese samples were used in the subjective evaluations reported in our paper.
 Authors  Ryuichi Yamamoto (LINE Corp.) Eunwoo Song (NAVER Corp.) Jae-Min Kim (NAVER Corp.)  Abstract We propose Parallel WaveGAN1, a distillation-free, fast, and small-footprint waveform generation method using a generative adversarial network. In the proposed method, a non-autoregressive WaveNet is trained by jointly optimizing multi-resolution spectrogram and adversarial loss functions, which can effectively capture the time-frequency distribution of the realistic speech waveform.</description>
     </item>

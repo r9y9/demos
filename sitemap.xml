@@ -1,39 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://r9y9.github.io/demos/categories/</loc>
-    <lastmod>2019-10-21T20:18:27+09:00</lastmod>
+    <lastmod>2020-10-21T23:38:48+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://r9y9.github.io/demos/tags/icassp/</loc>
-    <lastmod>2019-10-21T20:18:27+09:00</lastmod>
+    <lastmod>2020-10-21T23:38:48+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://r9y9.github.io/demos/</loc>
-    <lastmod>2019-10-21T20:18:27+09:00</lastmod>
+    <lastmod>2020-10-21T23:38:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://r9y9.github.io/demos/projects/icassp2020/</loc>
-    <lastmod>2019-10-21T20:18:27+09:00</lastmod>
+    <loc>https://r9y9.github.io/demos/projects/icassp2021/</loc>
+    <lastmod>2020-10-21T23:38:48+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://r9y9.github.io/demos/projects/</loc>
-    <lastmod>2019-10-21T20:18:27+09:00</lastmod>
+    <lastmod>2020-10-21T23:38:48+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://r9y9.github.io/demos/tags/</loc>
-    <lastmod>2019-10-21T20:18:27+09:00</lastmod>
+    <lastmod>2020-10-21T23:38:48+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://r9y9.github.io/demos/categories/tts/</loc>
+    <lastmod>2020-10-21T23:38:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r9y9.github.io/demos/projects/icassp2020/</loc>
     <lastmod>2019-10-21T20:18:27+09:00</lastmod>
   </url>
   

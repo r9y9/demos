@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.75.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/normalize.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/skeleton.css">
+<link rel="stylesheet" href="https://r9y9.github.io/demos/css/custom.css">
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="List of demos">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+<title>Parallel waveform synthesis based on generative adversarial networks with voicing-aware conditional discriminators - List of demos</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Parallel waveform synthesis based on generative adversarial networks with voicing-aware conditional discriminators</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2020-10-21">October 21, 2020</time></span>
+			<section itemprop="entry-text">
+				
+
+<p>Submitted to <a href="https://2021.ieeeicassp.org/">ICASSP 2021</a></p>
+
+<h2 id="table-of-contents">Table of contents</h2>
+
+<ul>
+<li><a href="#analysis-synthesis">Analysis/synthesis samples (Japanese)</a></li>
+<li><a href="#text-to-speech">Text-to-speech samples (Japanese)</a></li>
+</ul>
+
+<h2 id="authors">Authors</h2>
+
+<ul>
+<li>Ryuichi Yamamoto (LINE Corp.)</li>
+<li>Eunwoo Song (NAVER Corp.)</li>
+<li>Min-Jae Hwang (Search Solutions Inc.)</li>
+<li>Jae-Min Kim (NAVER Corp.)</li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>This paper proposes voicing-aware conditional discriminators for Parallel WaveGAN-based waveform synthesis systems. In this framework, we adopt a projection-based conditioning method that can significantly improve the discriminator’s performance. Furthermore, the conventional discriminator is separated into two waveform discriminators for modeling voiced and unvoiced speech. As each discriminator learns the distinctive characteristics of the harmonic and noise components, respectively, the adversarial training process becomes more efficient, allowing the generator to produce more realistic speech waveforms. Subjective test results demonstrate the superiority of the proposed method over the conventional Parallel WaveGAN and WaveNet systems. In particular, our speaker-independently trained model within a FastSpeech 2 based text-to-speech framework achieves the mean opinion scores of 4.20, 4.18, 4.21, and 4.31 for four Japanese speakers, respectively.</p>
+
+<div align="center"><img src="https://r9y9.github.io/demos/images/icassp2021_fig.png" width="50%" /></div>
+
+<h2 id="systems-for-comparision">Systems for comparision</h2>
+
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Voiced segments</th>
+<th>Unvoiced segments</th>
+<th>Discriminator conditioning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>S1-WaveNet <a href="https://arxiv.org/abs/1807.07281">[1]</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>S2-PWG <a href="https://arxiv.org/abs/1910.11480">[2]</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>S3-PWG-cGAN-D</td>
+<td>-</td>
+<td>-</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>S4-PWG-V/UV-D</td>
+<td>$D^{\mathrm{{v}}}$</td>
+<td>$D^{\mathrm{{v}}}$</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>S5-PWG-V/UV-D</td>
+<td>$D^{\mathrm{{uv}}}$</td>
+<td>$D^{\mathrm{{v}}}$</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>S6-PWG-V/UV-D</td>
+<td>$D^{\mathrm{{uv}}}$</td>
+<td>$D^{\mathrm{{uv}}}$</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>S7-PWG-V/UV-D (proposed)</td>
+<td>$D^{\mathrm{{v}}}$</td>
+<td>$D^{\mathrm{{uv}}}$</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Recordings</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>$D^{\mathrm{{v}}}$: 1-D dilated CNN discrimiantor with the reseptive field size of 127.</li>
+<li>$D^{\mathrm{{uv}}}$: 1-D CNN discrimiantor with the reseptive field size of 13.</li>
+</ul>
+
+<p>PWG denotes Parallel WaveGAN for short. Systems S2-PWG and S3-PWG-cGAN-D used $D^{\mathrm{{v}}}$  as the primary discriminator. <strong>Note that all the Parallel WaveGAN systems used the same generator architecture and training configurations; they only differed in the discriminator settings.</strong></p>
+
+<h2 id="analysis-synthesis">Analysis/synthesis</h2>
+
+<h3 id="f1-female">F1 (female)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>S1-WaveNet</th><th>S2-PWG</th><th><font color="#0000cd">S7-PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>S3-PWG-cGAN-D</th><th>S4-PWG-V/UV-D</th><th>S5-PWG-V/UV-D</th><th>S6-PWG-V/UV-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-S4-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-S5-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/AnaSyn/[Test01]-S6-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="f2-female">F2 (female)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>S1-WaveNet</th><th>S2-PWG</th><th><font color="#0000cd">S7-PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>S3-PWG-cGAN-D</th><th>S4-PWG-V/UV-D</th><th>S5-PWG-V/UV-D</th><th>S6-PWG-V/UV-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-S4-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-S5-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/AnaSyn/[Test01]-S6-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="m1-male">M1 (male)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>S1-WaveNet</th><th>S2-PWG</th><th><font color="#0000cd">S7-PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>S3-PWG-cGAN-D</th><th>S4-PWG-V/UV-D</th><th>S5-PWG-V/UV-D</th><th>S6-PWG-V/UV-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-S4-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-S5-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/AnaSyn/[Test01]-S6-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="m2-male">M2 (male)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>S1-WaveNet</th><th>S2-PWG</th><th><font color="#0000cd">S7-PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>S3-PWG-cGAN-D</th><th>S4-PWG-V/UV-D</th><th>S5-PWG-V/UV-D</th><th>S6-PWG-V/UV-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-S4-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-S5-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/AnaSyn/[Test01]-S6-PWG-VUV-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h2 id="text-to-speech">Text-to-speech</h2>
+
+<p>FastSpeech 2 (<a href="https://arxiv.org/abs/2006.04558">[3]</a>) based acoustic models were used for text-to-speech experiments.</p>
+
+<h3 id="f1-female-1">F1 (female)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 2</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test02]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test02]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test02]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test02]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test02]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 3</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test03]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test03]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test03]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test03]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F1/TTS/[Test03]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="f2-female-1">F2 (female)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 2</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test02]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test02]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test02]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test02]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test02]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 3</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test03]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test03]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test03]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test03]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/F2/TTS/[Test03]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="m1-male-1">M1 (male)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 2</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test02]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test02]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test02]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test02]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test02]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 3</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test03]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test03]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test03]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test03]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M1/TTS/[Test03]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h3 id="m2-male-1">M2 (male)</h3>
+
+<p><p>Sample 1</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test01]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test01]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test01]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test01]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test01]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 2</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test02]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test02]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test02]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test02]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test02]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table><p>Sample 3</p><table><thead>
+<tr><th>Recording</th><th>FastSpeech 2 + WaveNet</th><th>FastSpeech 2 + PWG</th><th><font color="#0000cd">FastSpeech 2 + PWG-V/UV-D (ours)</font></th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test03]-R1-Ground truth.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test03]-S1-WaveNet.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test03]-S2-PWG.wav" type="audio/wav"></audio></td>
+<td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test03]-S7-PWG-VUV-D (ours).wav" type="audio/wav"></audio></td>
+</tr></tbody></table><table><thead>
+<tr><th>FastSpeech 2 + PWG-cGAN-D</th></tr>
+</thead><tbody><tr><td><audio controls="" style="width: 250px;"><source src="https://r9y9.github.io/demos/audio/icassp2021-pwg-vuvd/M2/TTS/[Test03]-S3-PWG-cGAN-D.wav" type="audio/wav"></audio></td>
+</tr></tbody></table></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li>[1] W. Ping, K. Peng, and J. Chen, “ClariNet: Parallel wave generation in end-to-end text-to-speech,” in Proc. ICLR, 2019 <a href="https://arxiv.org/abs/1807.07281">arXiv</a>.</li>
+<li>[2] R Yamamoto, E Song, and J.-M Kim, “Parallel WaveGAN:A fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram,”  in Proc. ICASSP, 2020, pp. 6199–6203. <a href="https://arxiv.org/abs/1910.11480">arXiv</a>.</li>
+<li>[3] Y Ren, C Hu, T Qin, S Zhao, Z Zhao, and T.-Y Liu, “Fast-speech 2: Fast and high-quality end-to-end text-to-speech,”arXiv preprint arXiv:2006.04558, 2020. <a href="https://arxiv.org/abs/2006.04558">arXiv</a>.</li>
+</ul>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>Work performed with nVoice, Clova Voice, Naver Corp.</p>
+
+<h2 id="citation">Citation</h2>
+
+<p>TBD</p>
+
+				
+<div class="social">
+    <div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="r9y9" data-text="Parallel waveform synthesis based on generative adversarial networks with voicing-aware conditional discriminators" data-related="r9y9">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+</div>
+
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<address>
+
+		<div class="copyright">Copyright &copy;
+			<a href="https://r9y9.github.io/demos/about">Ryuichi YAMAMOTO</a> All rights reserved.
+
+      <a href="https://github.com/r9y9">
+				<span class="github">https://github.com/r9y9</span>.
+			</a>
+		</div>
+		</address>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-44433856-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
+ </script>
+
+
+
+
+</body>
+</html>
+

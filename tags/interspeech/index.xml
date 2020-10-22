@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>interspeech on List of demos</title>
@@ -6,11 +6,7 @@
     <description>Recent content in interspeech on List of demos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Jun 2019 17:20:29 +0900</lastBuildDate>
-    
-	<atom:link href="https://r9y9.github.io/demos/tags/interspeech/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 25 Jun 2019 17:20:29 +0900</lastBuildDate><atom:link href="https://r9y9.github.io/demos/tags/interspeech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Probability Density Distillation with Generative Adversarial Networks for High-Quality Parallel Waveform Generation</title>
       <link>https://r9y9.github.io/demos/projects/interspeech2019/</link>
