@@ -13,7 +13,7 @@
       <pubDate>Wed, 21 Oct 2020 23:38:48 +0900</pubDate>
       
       <guid>https://r9y9.github.io/demos/projects/icassp2021/</guid>
-      <description>Preprint: arXiv:2010.14151 (submitted to ICASSP 2021)
+      <description>Preprint: arXiv:2010.14151 (accepted to ICASSP 2021)
 Table of contents  Analysis/synthesis samples (Japanese) Text-to-speech samples (Japanese) Bonus: analysis/synthesis samples for CMU ARCTIC (English)  Authors  Ryuichi Yamamoto (LINE Corp.) Eunwoo Song (NAVER Corp.) Min-Jae Hwang (Search Solutions Inc.) Jae-Min Kim (NAVER Corp.)  Abstract This paper proposes voicing-aware conditional discriminators for Parallel WaveGAN-based waveform synthesis systems. In this framework, we adopt a projection-based conditioning method that can significantly improve the discriminator’s performance.</description>
     </item>
     
