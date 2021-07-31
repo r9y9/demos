@@ -13,8 +13,8 @@
       <pubDate>Fri, 30 Jul 2021 12:11:03 +0900</pubDate>
       
       <guid>https://r9y9.github.io/demos/projects/va-pwg/</guid>
-      <description>Authors  Ryuichi Yamamoto (LINE Corp.) Min-Jae Hwang (Search Solutions Inc.) Eunwoo Song (NAVER Corp.)  Abstract TBD
-Samples TBD</description>
+      <description>Submitted to IEEE signal processing letters.
+ Authors Abstract TTS samples  M1 (male) M2 (male) F1 (female) F2 (female)  Acknowledgements  Authors  Ryuichi Yamamoto (LINE Corp.) Min-Jae Hwang (Search Solutions Inc.) Eunwoo Song (NAVER Corp.)  Abstract This letter proposes a voicing-aware Parallel Wave- GAN (VA-PWG) vocoder for a neural text-to-speech (TTS) system. To generate a high-quality speech waveform, it is important to reflect the distinct characteristics of voiced and unvoiced speech signals well.</description>
     </item>
     
   </channel>
